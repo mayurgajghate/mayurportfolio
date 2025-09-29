@@ -12,7 +12,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
   body, html {
     min-height: 100%;
-    background: linear-gradient(rgba(15,15,15,0.85), rgba(15,15,15,0.9)), url('./IMG_4992.JPEG') no-repeat center center/cover;
+    background: linear-gradient(rgba(15,15,15,0.85), rgba(15,15,15,0.9)), url('IMG_4992.JPEG') no-repeat center center/cover;
     background-attachment: fixed; color: #fff;
   }
   .topnav { position: fixed; top: 0; right: 0; z-index: 1000; display: flex; gap: 25px; padding: 15px 40px;
@@ -33,6 +33,23 @@
   h1 { font-size: 42px; margin-bottom: 20px;
        background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   p { font-size: 18px; color: #ddd; line-height: 1.8; margin-bottom: 20px; }
+  .btn-resume {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    background: linear-gradient(135deg, #ff6ec4, #7873f5, #4ade80);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  .btn-resume:hover {
+    background: linear-gradient(135deg, #4ade80, #7873f5, #ff6ec4);
+  }
   @media (max-width: 768px) {
     .topnav { flex-wrap: wrap; padding: 10px 20px; gap: 15px; }
     h1 { font-size: 28px; }
@@ -52,9 +69,11 @@
 
   <section data-aos="fade-up">
     <h1>About Me</h1>
-    <p>Hello! I'm <strong>Mayur Gajghate</strong>, a passionate Salesforce Developer & Consultant with experience in crafting scalable CRM solutions.</p>
-    <p>I have hands-on expertise in <strong>Apex, Lightning Web Components (LWC), CPQ</strong>, and various Salesforce clouds. My goal is to help businesses streamline processes, optimize customer relationships, and achieve growth with tailor-made Salesforce implementations.</p>
-    <p>Beyond coding, I enjoy continuous learning, exploring new technologies, and collaborating with teams to deliver impactful solutions.</p>
+    <p>Hello! I'm <strong>Mayur Gajghate</strong>, a Salesforce Developer & Consultant with 4+ years of experience in building scalable CRM solutions.</p>
+    <p>I specialize in <strong> Apex, LWC, CPQ, and Salesforce Clouds</strong>, helping businesses streamline processes and boost growth.</p>
+    <p>I have working knowledge of <strong>Python, Java, HTML, and CSS,</strong> which supports a broader technical approach to problem-solving. I'm also experienced in <strong>daily client communication,</strong> ensuring alignment and smooth project delivery.</p>
+    <p>Passionate about continuous learning and collaboration, I enjoy exploring new technologies and delivering impactful, tailored Salesforce solutions.</p>
+    <a href="Mayur_Gajghate.pdf" download class="btn-resume" aria-label="Download Resume">Download Resume <i class="fa fa-download"></i></a>
   </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
