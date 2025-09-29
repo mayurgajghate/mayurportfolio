@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <title>Mayur Gajghate - Portfolio</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
@@ -23,21 +23,10 @@
   body, html {
     height: 100%;
     overflow-x: hidden;
-    
     background: linear-gradient(rgba(15,15,15,0.85), rgba(15,15,15,0.9)), url('assets/IMG_4992.JPEG')
-    no-repeat center center/cover;
-    background-attachment: fixed; 
+      no-repeat center center/cover;
+    background-attachment: fixed;
     color: #fff;
-  }
-
-  /* Mobile friendly background fix */
-  @media (max-width: 768px) {
-    body, html {
-      background-size: contain !important;
-      background-position: center center !important;
-      background-repeat: no-repeat !important;
-      background-attachment: scroll !important;
-    }
   }
 
   ::-webkit-scrollbar {
@@ -59,6 +48,7 @@
     justify-content: center;
     text-align: center;
     overflow: hidden;
+    padding: 0 20px; /* Added some horizontal padding for small screens */
   }
 
   /* Glassmorphism navbar */
@@ -66,6 +56,7 @@
     position: fixed;
     top: 0;
     right: 0;
+    left: 0;
     z-index: 1000;
     display: flex;
     gap: 25px;
@@ -74,12 +65,26 @@
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255,255,255,0.15);
     border-radius: 0 0 0 20px;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #7873f5 #1a1a1a;
+  }
+  .topnav::-webkit-scrollbar {
+    height: 6px;
+  }
+  .topnav::-webkit-scrollbar-thumb {
+    background: #7873f5;
+    border-radius: 3px;
   }
   .topnav a {
     color: #fff;
     font-weight: 500;
     text-decoration: none;
     transition: all 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
   .topnav a:hover {
     background: var(--accent-gradient);
@@ -103,6 +108,7 @@
     font-size: 56px;
     margin-bottom: 15px;
     animation: fadeIn 2s ease-out;
+    line-height: 1.1;
   }
   .intro h2 {
     font-size: 26px;
@@ -135,6 +141,8 @@
     text-decoration: none;
     transition: all 0.4s ease;
     box-shadow: 0 0 10px rgba(120,115,245,0.3);
+    display: inline-block;
+    white-space: nowrap;
   }
   .buttons a:hover {
     background: var(--accent-gradient);
@@ -151,6 +159,8 @@
   .intro {
     animation: float 6s ease-in-out infinite;
     z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
   }
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
@@ -183,24 +193,80 @@
     transform: scale(1.2);
   }
 
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .intro h1 {
+      font-size: 48px;
+    }
+    .intro h2 {
+      font-size: 22px;
+    }
+  }
+
   @media (max-width: 768px) {
-    .intro h1 { font-size: 36px; }
-    .intro h2 { font-size: 20px; }
-    .buttons { flex-direction: column; }
-    .topnav { flex-wrap: wrap; padding: 10px 20px; gap: 15px; }
+    .intro h1 {
+      font-size: 36px;
+    }
+    .intro h2 {
+      font-size: 20px;
+    }
+    .buttons {
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    .buttons a {
+      padding: 12px 0;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .topnav {
+      padding: 10px 20px;
+      gap: 15px;
+      justify-content: center;
+      border-radius: 0 0 20px 20px;
+      overflow-x: visible;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header {
+      padding: 0 15px;
+    }
+    .intro h1 {
+      font-size: 28px;
+    }
+    .intro h2 {
+      font-size: 18px;
+    }
+    .intro p {
+      font-size: 16px;
+      max-width: 100%;
+    }
+    .social-links {
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .social-links a {
+      font-size: 24px;
+    }
   }
 </style>
 </head>
 <body>
 <header>
   <canvas id="particles"></canvas>
-  <nav class="topnav">
-    <a href="index.html">Home <i class="fa fa-home"></i></a>
-    <a href="assets/about_me_page.html">About <i class="fa fa-user"></i></a>
-    <a href="assets/my_work_page.html">Projects <i class="fa fa-suitcase"></i></a>
-    <a href="assets/skills_page.html">Skills <i class="fa fa-code"></i></a>
-    <a href="assets/certifications_page.html">Certificate <i class="fa fa-certificate"></i></a>
-    <a href="assets/contact_me_page.html">Contact <i class="fa fa-envelope"></i></a>
+  <nav class="topnav" role="navigation" aria-label="Primary Navigation">
+    <a href="index.html" aria-current="page">Home <i class="fa fa-home" aria-hidden="true"></i></a>
+    <a href="assets/about_me_page.html">About <i class="fa fa-user" aria-hidden="true"></i></a>
+    <a href="assets/my_work_page.html">Projects <i class="fa fa-suitcase" aria-hidden="true"></i></a>
+    <a href="assets/skills_page.html">Skills <i class="fa fa-code" aria-hidden="true"></i></a>
+    <a href="assets/certifications_page.html">Certificate <i class="fa fa-certificate" aria-hidden="true"></i></a>
+    <a href="assets/contact_me_page.html">Contact <i class="fa fa-envelope" aria-hidden="true"></i></a>
   </nav>
 
   <div class="intro">
@@ -211,8 +277,7 @@
       <a href="assets/my_work_page.html">View Projects</a>
       <a href="assets/contact_me_page.html">Contact Me</a>
     </div>
-    <!-- Social Media Links added below buttons -->
-    <div class="social-links" data-aos="fade-up">
+    <div class="social-links" data-aos="fade-up" role="region" aria-label="Social media links">
       <a href="https://facebook.com/MayurGajghate" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
         <i class="fab fa-facebook-f"></i>
       </a>
@@ -231,8 +296,9 @@ const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+
 let particlesArray = [];
-const numberOfParticles = 100;
+let numberOfParticles = window.innerWidth < 768 ? 50 : 100;
 
 class Particle {
   constructor(){
@@ -265,7 +331,7 @@ function init(){
 
 function connect(){
   for(let a=0; a<particlesArray.length; a++){
-    for(let b=a; b<particlesArray.length; b++){
+    for(let b=a+1; b<particlesArray.length; b++){
       let dx = particlesArray[a].x - particlesArray[b].x;
       let dy = particlesArray[a].y - particlesArray[b].y;
       let distance = Math.sqrt(dx*dx + dy*dy);
@@ -294,6 +360,7 @@ function animate(){
 window.addEventListener('resize', ()=>{
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+  numberOfParticles = window.innerWidth < 768 ? 50 : 100;
   init();
 });
 
