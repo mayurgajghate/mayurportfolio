@@ -12,7 +12,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
   body, html {
     min-height: 100%;
-    background: linear-gradient(rgba(15,15,15,0.85), rgba(15,15,15,0.9)), url('./IMG_4992.JPEG') no-repeat center center/cover;
+    background: linear-gradient(rgba(15,15,15,0.85), rgba(15,15,15,0.9)), url('IMG_4992.JPEG') no-repeat center center/cover;
     background-attachment: fixed; color: #fff;
   }
   .topnav { position: fixed; top: 0; right: 0; z-index: 1000; display: flex; gap: 25px; padding: 15px 40px;
@@ -66,6 +66,37 @@
     box-shadow: 0 0 20px #ff6ec4, 0 0 40px #7873f5;
   }
   p { color: #ddd; margin-top: 15px; font-size: 15px; }
+
+  /* Social Links Styling */
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+  }
+
+  .social-links a {
+    text-decoration: none; /* REMOVE underline */
+    color: #fff;
+    font-size: 28px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  }
+
+  .social-links a:hover {
+    color: #ff6ec4;
+    background: #fff;
+    transform: scale(1.2);
+    box-shadow: 0 0 12px #ff6ec4;
+  }
+
   @media (max-width: 768px) {
     .topnav { flex-wrap: wrap; padding: 10px 20px; gap: 15px; }
     h1 { font-size: 28px; }
@@ -91,6 +122,15 @@
       <textarea rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
+
+    <div class="social-links">
+      <a href="https://facebook.com/mayurgajghate" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/mayur.gajghate" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/in/mayur-gajghate" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:mayurgajghate99@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/9511885986" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://x.com/mayur_gajghate" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
   </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
