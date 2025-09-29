@@ -153,6 +153,25 @@
     z-index: 0;
   }
 
+  /* Social Links below buttons */
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .social-links a {
+    color: #fff;
+    font-size: 28px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .social-links a:hover {
+    color: #7873f5;
+    transform: scale(1.2);
+  }
+
   @media (max-width: 768px) {
     .intro h1 { font-size: 36px; }
     .intro h2 { font-size: 20px; }
@@ -176,10 +195,22 @@
   <div class="intro">
     <h1 data-aos="fade-right">Hi, I'm <span>Mayur Gajghate</span></h1>
     <h2 data-aos="fade-left">Salesforce Developer & Consultant</h2>
-    <p data-aos="fade-up">I specialize in building scalable CRM solutions and transforming complex business requirements into powerful Salesforce implementations using Apex, LWC, CPQ, and more.</p>
+    <p data-aos="fade-up">Specializing in Sales Cloud, CPQ, and Salesforce development with expertise in LWC, Apex, and Flow Builder. Passionate about leveraging my skills to drive digital transformation and deliver innovative solutions.</p>
     <div class="buttons" data-aos="zoom-in">
       <a href="assets/my_work_page.html">View Projects</a>
       <a href="assets/contact_me_page.html">Contact Me</a>
+    </div>
+    <!-- Social Media Links added below buttons -->
+    <div class="social-links" data-aos="fade-up">
+      <a href="https://facebook.com/MayurGajghate" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com/mayur.gajghate" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://linkedin.com/in/mayur-gajghate" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
     </div>
   </div>
 </header>
